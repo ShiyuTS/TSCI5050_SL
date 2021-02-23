@@ -1,16 +1,7 @@
-dat0 <- import('C:/Users/shiyu/Downloads/fghm_heart_study_mortality_2018_v1.csv')
-
-#Question 1: install packages
-library("devtools")
-library("dplyr")
-library("ggplot2")
-library("pander")
-library("table1")
-library("broom")
-library("synthpop")
-library("rmarkdown")
+source("config.R")
+library("rio")
 #import dat0 from local desktop
-dat0 <- import('C:/Users/shiyu/Downloads/fghm_heart_study_mortality_2018_v1.csv')
+dat0 <- import(datafile0)
 #Question 2
 ##create odd_index with odd-numbered rows in dat0
 odd_index <- dat0[c(TRUE,FALSE),]
