@@ -20,6 +20,12 @@ customsim0 <- function(data){
   out
  }
 
+dat1 <- import('C:/Users/shiyu/OneDrive - UT Health San Antonio/Orange Grove Diabetes Study/Data/data analysis/Rural Health Study_Posttest Data.xlsx') %>% syn(.,visit.sequence = 2:ncol(.)) %>% `$`(syn)
+dat2 <- import('C:/Users/shiyu/OneDrive - UT Health San Antonio/Orange Grove Diabetes Study/Data/data analysis/Rural Health Study_technology_outcome.xlsx') %>% syn(.,visit.sequence=2:ncol(.)) %>% `$`(syn)
+
 dat0a <- import_list("c:/Users/shiyu/OneDrive - UT Health San Antonio/Orange Grove Diabetes Study/Data/TalentLMS Report/Usage Analysis/logins.xlsx");
 dat0b <- sapply(dat0a[8:19], customsim0, simplify = FALSE)
-export(dat0b, "Data/logins.xlsx")
+
+export(dat0b, "Data/SIMULATED_logins.xlsx")
+export(dat1,'Data/SIMULATED_Rural Health Study_Posttest Data.xlsx')
+export(dat2,'Data/SIMULATED_Rural Health Study_technology_outcome.xlsx')
